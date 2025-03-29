@@ -1,0 +1,64 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&display=swap');
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+	--amber-bg: #bfaca0;
+}
+
+body {
+	font-family: 'Alexandria', sans-serif;
+	background-color: var(--color-background);
+}
+
+@theme {
+	/* --color-text: #010204;
+	--color-text-white: #fafffc;
+	--color-background: #fafffc;
+	--color-primary: #ffdd00;
+	--color-secondary: #eca736;
+	--color-accent: #ff740a; */
+
+	--color-text-light: #2a2d30;
+	--color-text: #010204;
+	--color-text-dark: #000000;
+
+	/* White/Background */
+	--color-text-white-light: #ffffff;
+	--color-text-white: #fafffc;
+	--color-text-white-dark: #e3e6e3;
+
+	/* Background */
+	--color-background-light: #ffffff;
+	--color-background: #fafffc;
+	--color-background-dark: #dbe3df;
+
+	/* Primary (Yellow) */
+	--color-primary-light: #ffeb66;
+	--color-primary: #ffdd00;
+	--color-primary-dark: #d4b700;
+
+	/* Secondary (Orange) */
+	--color-secondary-light: #f4bd70;
+	--color-secondary: #eca736;
+	--color-secondary-dark: #b17d29;
+
+	/* Accent (Bright Orange) */
+	--color-accent-light: #ff9c5c;
+	--color-accent: #ff740a;
+	--color-accent-dark: #c35408;
+}
+
+@layer base {
+	@variant dark {
+		--color-text: #fbfcfe;
+		--color-background: #000502;
+		--color-text-white: #000502;
+		/* --color-primary: #ffdd00;
+		--color-secondary: #c98313;
+		--color-accent: #f56a00; */
+	}
+}
