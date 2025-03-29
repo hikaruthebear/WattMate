@@ -10,8 +10,7 @@
 }
 
 body {
-	font-family: 'Alexandria', sans-serif;
-	background-color: var(--color-background);
+	background-color: var(--color-background-dark);
 }
 
 @theme {
@@ -39,7 +38,7 @@ body {
 	/* Primary (Yellow) */
 	--color-primary-light: #ffeb66;
 	--color-primary: #ffdd00;
-	--color-primary-dark: #d4b700;
+	--color-primary-dark: #fac800;
 
 	/* Secondary (Orange) */
 	--color-secondary-light: #f4bd70;
@@ -61,4 +60,23 @@ body {
 		--color-secondary: #c98313;
 		--color-accent: #f56a00; */
 	}
+}
+
+::-webkit-scrollbar {
+ @apply w-2
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+ @apply bg-gray-400 rounded-2xl
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  @apply bg-primary rounded-2xl
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary-dark
 }

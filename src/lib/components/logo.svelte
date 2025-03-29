@@ -3,5 +3,5 @@
 </script>
 
 <div class="m-2" style="width:{width}rem">
-  <img src="/logo.svg" alt="logo" class="inline">
+  <img src="/logo.png" alt="logo" class="inline">
 </div>
