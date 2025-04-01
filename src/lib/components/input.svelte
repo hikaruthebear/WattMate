@@ -12,7 +12,7 @@
 </script>
 
 <div class="flex flex-col p-1">
-	<label for={label} class=" text-gray-700">
+	<label for={label} class=" text-black-200">
 		{label}
 		<input
 			{type}
@@ -22,9 +22,9 @@
 			onfocus={scrollOnView}
 			autocomplete='off'
 			id={label}
-			class="border-box w-full rounded-lg bg-white/80 text-gray-500 transition-all ease-in placeholder:font-normal placeholder:transition-all
-			hover:cursor-text hover:border-amber-500 hover:ring-amber-500 focus:border-amber-500 focus:text-lg
-			focus:text-gray-800 focus:ring-amber-500 focus:placeholder:text-lg
+			class="border-box w-full rounded-lg bg-white-50 text-black-50 transition-all ease-in placeholder:font-normal placeholder:transition-all
+			hover:cursor-text hover:border-primary-300 hover:ring-primary-300 focus:border-primary-300 focus:text-lg
+			focus:text-gray-800 focus:ring-primary-300 focus:placeholder:text-lg
 			{size === 'sm' ? 'h-8' : ''}
 			{size === 'md' ? 'h-10' : ''}
 			{size === 'lg' ? 'h-11' : ''}

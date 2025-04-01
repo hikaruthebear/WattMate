@@ -1,6 +1,4 @@
 import { ssrExportAllKey } from 'vite/module-runner';
-
-// src/lib/index.ts
 export { default as Logo } from './components/logo.svelte';
 export { default as Button } from './components/button.svelte';
 export { default as Input } from './components/input.svelte';
@@ -15,3 +13,4 @@ export {default as Card} from './components/card.svelte'
 export {default as TableRow} from './components/table-row.svelte'
 export {default as TableHead} from './components/table-head.svelte'
 export {default as Heading} from './components/heading.svelte'
+export {default as Selection} from './components/selection.svelte'

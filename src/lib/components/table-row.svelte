@@ -5,10 +5,10 @@
 	export let column4 = 'column 4';
 </script>
 
-<div class="grid grid-cols-4 grid-rows-1 gap-4 p-2 text-text-light">
+<div class="text-text-light grid grid-cols-3 grid-rows-1 gap-4 p-2 md:grid-cols-4">
 	<div>{column1}</div>
 	<div>{column2}</div>
 	<div>{column3}</div>
-	<div class="bg-primary/70 w-fit py-1 px-3 rounded-xl">{column4}</div>
+	<div class=" bg-success-100 w-fit rounded-xl px-3 py-1 hidden md:inline">{column4}</div>
 </div>
-<hr class="m-2 text-text/30">
+<hr class="text-black-100/30 m-2" />

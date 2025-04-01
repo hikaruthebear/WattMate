@@ -2,11 +2,13 @@
 	import { Icon } from '$lib';
 	export let size = '1';
 	export let label = 'label';
+	export let style = '';
 </script>
 
-<div class="bg-primary px-4 flex items-center rounded-3xl py-3 gap-1 text-sm hover:bg-primary-dark transition-all duration-300 ease-in-out">
-	
-		<Icon {size} />
-	
+<div
+	class="bg-primary-300  hover:bg-primary-400 flex items-center gap-1 rounded-3xl px-4 py-3 text-sm transition-all duration-300 ease-in-out {style}"
+>
+	<Icon {size} />
+
 	<span>{label}</span>
 </div>
