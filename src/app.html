@@ -2,11 +2,21 @@
 <html lang="en" class="dark">
 	<head>
 		<meta charset="utf-8" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.0.0/particles.min.js" integrity="sha512-bdhiPAmFMAgAD3/LSwq0uxheog+lTqvyHXOnJMSITlx9VviXDVzkAt4qOaMPuW79TXnNaV2/xHCKUeg9Q6TpMw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents">%sveltekit.body%</div>
+		<div class="absolute min-h-screen top-0 left-0 w-full z-[-1] opacity-70">
+			<div class="absolute inset-0" id="particle-js">
+			</div>
+		</div> 
+		<script>
+			particleJS.load('particles-js', 'assets/particles.json', function() {
+				console.log('Callback - particles.js config loaded')
+			})
+		</script>
 	</body>
 </html>

@@ -1,1 +1,1 @@
-<div class="m-2 border-r w-0 border-text/20">&nbsp;</div>
+<div class="m-2 border-r w-0 border-black-50/20">&nbsp;</div>

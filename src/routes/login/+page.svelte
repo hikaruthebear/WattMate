@@ -5,7 +5,7 @@
 <main class="text-black-500 bg-white-100 flex h-[100dvh] flex-col items-center justify-center">
 	<div
 		class="bg-white-50 flex h-full w-full flex-col gap-7 px-5 py-10 md:h-auto md:w-1/4 md:min-w-[375px] md:rounded-xl drop-shadow-md"
-	>//
+	>
 		<div>
 			<h1 class="text-2xl font-bold">
 				Please login to <span class="text-accent-300">WattMate!</span>
@@ -16,7 +16,7 @@
 			<Input label="Username" type="text" size="md" required />
 			<Input label="Password" type="password" size="md" required />
 			<div>
-				<a href="/" class="text-black-500 inline font-semibold hover:underline">Forgot password</a>
+				<a href="/" class="text-black-500 inline font-semibold hover:underline p-1">Forgot password</a>
 			</div>
 			<Button variant="primary" label="Login" size="md" />
 			<hr class="text-black-50/20" />
