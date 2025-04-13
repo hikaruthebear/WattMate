@@ -2,7 +2,7 @@
 	import { Button, Selection, Input } from '$lib';
 </script>
 
-<main class="bg-white-100 text-black-500 flex h-[100dvh] flex-col items-center justify-center">
+<main class="bg-white-100 text-black-500 flex h-[100vh] flex-col items-center justify-center">
 	<div
 		class="bg-white-50 flex h-full w-full flex-col gap-7 px-5 py-10 md:h-auto md:w-1/3 md:min-w-[375px] md:rounded-xl"
 	>

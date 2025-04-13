@@ -9,6 +9,6 @@
 	<div>{column1}</div>
 	<div>{column2}</div>
 	<div>{column3}</div>
-	<div class=" bg-success-100 w-fit rounded-xl px-3 py-1 hidden md:inline">{column4}</div>
+	<div class=" text-success-500 font-bold w-fit rounded-xl px-3 py-1 hidden md:inline">{column4}</div>
 </div>
 <hr class="text-black-100/30 m-2" />

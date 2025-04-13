@@ -12,7 +12,7 @@
 </script>
 
 <div class="flex flex-col p-1">
-	<label for={label} class=" text-black-200">
+	<label for={label} class=" text-black-200 font-semibold">
 		{label}
 		<input
 			{type}
