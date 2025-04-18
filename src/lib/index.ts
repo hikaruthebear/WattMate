@@ -1,7 +1,7 @@
 export { default as Logo } from './components/logo.svelte';
 export { default as Button } from './components/button.svelte';
 export { default as Input } from './components/input.svelte';
-export { default as Sidebar } from './components/sidebar/user-sidebar.svelte'
+export { default as UserSidebar } from './components/sidebar/user-sidebar.svelte'
 export { default as Icon } from './components/icon.svelte';
 export { default as ActionItem } from './components/action-item.svelte';
 export { default as Header } from './components/header.svelte';

@@ -2,13 +2,13 @@
 	import { Icon } from '$lib';
 	export let size = '2';
 	export let label = 'label';
-	export let style = '';
+	export let icon = '/placeholder.png';
 </script>
 
 <div
 	class="bg-primary-300 md:rounded-5xl flex h-8 w-auto items-center justify-center gap-1 rounded-full p-3 text-[8px] md:w-auto md:text-[12px] md:h-12"
 >
-	<Icon {size} />
+	<Icon {size} src={icon} />
 	<span class="hidden md:inline">{label}</span>
 </div>
 

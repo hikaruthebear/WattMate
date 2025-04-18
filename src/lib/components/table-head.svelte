@@ -5,7 +5,7 @@
 	export let column4 = 'column 4';
 </script>
 
-<div class="grid grid-cols-3 grid-rows-1 gap-4 p-2  font-semibold md:grid-cols-4">
+<div class="grid grid-cols-[1fr_1fr_1fr_32px] grid-rows-1 gap-4 p-2  font-semibold md:grid-cols-[1fr_1fr_1fr_1fr_32px]">
 	<div>{column1}</div>
 	<div>{column2}</div>
 	<div >{column3}</div>

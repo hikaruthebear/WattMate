@@ -4,6 +4,6 @@
 </script>
 
 
-<div style="width: {size}rem">
-  <img {src} alt="icon">
+<div style="width: {size}rem" class="opacity-70">
+  <img  {src} alt="icon">
 </div>
