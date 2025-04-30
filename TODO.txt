@@ -1,8 +1,8 @@
 TODO
-  [] Pop-up container
-    -[] Notification panel
+  [+] Pop-up container
+    -[+] Notification panel
     -[] User panel
     -[] Consumer/Table option panel
-    -[] Payment panel
+    -[+] Payment panel
     -[] Add Table panel
     =[] Add Member panel

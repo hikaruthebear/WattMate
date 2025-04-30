@@ -3,24 +3,19 @@
 	import { Icon } from '$lib';
 	import { page } from '$app/state';
 
-	export let label = 'Menu1';
-	export let icon = '/placeholder.png';
-	export let name = '';
-	export let route = '#';
+	let { label = '', icon = '', name = '', route = '#', iconColor = '', sizepx = 32 } = $props();
 
-
-	let currentIcon = icon;
-
-	$: isActive = page.url.pathname === route;
-	$: currentIcon = isActive ? icon.replace('.png', '-active.png') : icon;
+	let isActive = $state(false);
+	isActive = page.url.pathname === route;
 </script>
 
 <label>
 	<input type="radio" {name} class="peer hidden" checked={isActive} onchange={() => goto(route)} />
 	<div
-		class="hover:bg-primary-100 peer-checked:hover:bg-primary-400 text-black-100 peer-checked:bg-primary-300 m-1 flex h-fit items-center gap-x-4 rounded-lg p-2 text-lg font-medium"
+		class="hover:bg-primary-100 peer-checked:hover:bg-primary-400 text-black-100 peer-checked:bg-primary-300
+		 m-1 flex h-fit items-center gap-x-2 rounded-lg p-2 text-lg font-medium"
 	>
-		<Icon size="1.5" src={currentIcon} />
+		<Icon {sizepx} {icon} color={iconColor} {isActive} />
 		<span class="">{label}</span>
 	</div>
 </label>

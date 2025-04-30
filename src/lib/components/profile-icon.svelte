@@ -1,16 +1,17 @@
 <script>
 	import { Icon } from '$lib';
-	export let size = '2';
-	export let label = 'label';
-	export let icon = '/placeholder.png';
+
+	let { iconSize = 32, icon = '', iconColor = '', label = '', onclick } = $props();
 </script>
 
 <div
-	class="bg-primary-300 md:rounded-5xl flex h-8 w-auto items-center justify-center gap-1 rounded-full p-3 text-[8px] md:w-auto md:text-[12px] md:h-12"
+	class="bg-primary-300 md:rounded-5xl flex h-8 w-auto items-center
+	justify-center gap-1 rounded-full p-3 text-[8px] md:h-12 md:w-auto md:text-[12px]"
+	role="button"
+	tabindex="0"
+	{onclick}
+	onkeydown={onclick}
 >
-	<Icon {size} src={icon} />
+	<Icon sizepx={iconSize} {icon} color={iconColor} />
 	<span class="hidden md:inline">{label}</span>
 </div>
-
-<!-- class="bg-primary-300  hover:bg-primary-400 flex items-center gap-1 rounded-3xl px-4 py-3 
-	text-sm transition-all duration-300 ease-in-out  -->

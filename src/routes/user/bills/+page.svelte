@@ -1,5 +1,5 @@
 <script>
-	import { UserSidebar, Header, Heading, TableHead, TableRow } from '$lib';
+	import { UserSidebar, UserHeader, Heading, TableHead, TableRow } from '$lib';
 
 	let sidebar = false;
 
@@ -10,7 +10,7 @@
 
 <div class="flex h-[100dvh] flex-col overflow-hidden">
 	<header class="fixed z-10 h-fit w-full bg-blue-500">
-		<Header onclick={toggleSidebar} />
+		<UserHeader onclick={toggleSidebar} />
 	</header>
 	<div class="flex h-full">
 		<div class=" fixed h-full w-64 shrink-0 bg-green-500 md:relative {sidebar ? 'hidden' : 'flex'} ">

@@ -1,5 +1,5 @@
 <script>
-	import { AdminSidebar, Header, Card , TableHead, TableRow} from '$lib';
+	import { AdminSidebar, AdminHeader , TableHead, TableRow} from '$lib';
 
 	let sidebar = false;
 
@@ -10,7 +10,7 @@
 
 <div class="flex h-[100dvh] flex-col overflow-hidden bg-red-500">
 	<header class="h-fit bg-blue-500 fixed w-full z-10">
-		<Header onclick={toggleSidebar} />
+		<AdminHeader onclick={toggleSidebar} />
 	</header>
 	<div class="flex h-full ">
 		<div class=" h-full w-64 bg-green-500 fixed shrink-0 md:relative {sidebar ? 'hidden' : 'flex'} ">

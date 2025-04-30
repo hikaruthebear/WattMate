@@ -8,12 +8,12 @@
 "
 >
 	<div class=" flex flex-col gap-3">
-		<SidebarItem label="Dashboard" name="nav" route="/user/dashboard" icon=/icons/dashboard.png/>
-		<SidebarItem label="Billing" name="nav" route="/user/bills" icon=/icons/bill.png/>
+		<SidebarItem label="Dashboard" name="nav" route="/user/dashboard" icon="grid_view"/>
+		<SidebarItem label="Billing" name="nav" route="/user/bills" icon="table"/>
 	</div>
 
 	<div class="flex flex-col gap-3 px-4">
 		<hr class="text-white-400" />
-		<ActionItem label="Logout" size="1" icon=/icons/logout.png/>
+		<ActionItem label="Logout" iconSize="32" icon="logout"/>
 	</div>
 </div>

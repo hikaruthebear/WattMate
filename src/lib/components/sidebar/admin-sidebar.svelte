@@ -8,13 +8,13 @@
 	overflow-hidden px-2 py-10 pt-20 md:pt-27 outline-1 outline-black-50/20"
 >
 	<div>
-		<SidebarItem label="Dashboard" name="nav" route="/admin/dashboard" icon="/icons/dashboard.png" />
-		<SidebarItem label="Bills" name="nav" route="/admin/bills" icon="/icons/bill.png" />
-		<SidebarItem label="Members" name="nav" route="/admin/members" icon="/icons/members.png" />
+		<SidebarItem label="Dashboard" name="nav" route="/admin/dashboard" icon="grid_view" />
+		<SidebarItem label="Bills" name="nav" route="/admin/bills" icon="table" />
+		<SidebarItem label="Members" name="nav" route="/admin/members" icon="groups" />
 	</div>
 
 	<div class="flex flex-col gap-3 px-4">
 		<hr class="text-white-400" />
-		<ActionItem label="Logout" icon="/icons/logout.png" size="1.5" />
+		<ActionItem label="Logout" icon="logout" iconSize="32" />
 	</div>
 </div>
