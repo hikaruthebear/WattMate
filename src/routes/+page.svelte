@@ -1,11 +1,15 @@
-<script>
-   
+<script lang="ts">
+	import { goto } from '$app/navigation';
 </script>
 
-<div class="flex h-screen w-screen justify-center items-center gap-5">
-   <a class=" flex items-center h-20 p-5 border-2 border-accent text-accent dark:text-text" href="/login">Login</a>
-   <a class=" flex items-center h-20 p-5 border-2 border-accent text-accent dark:text-text" href="/user/dashboard">User Dashboard</a>
-   <a class=" flex items-center h-20 p-5 border-2 border-accent text-accent dark:text-text" href="/admin/dashboard">Admin Dashboard</a>
+{#snippet route(label: string, route: string)}
+	<div class="border-2 border-white-600 p-2 rounded w-20 text-center">
+		<button onclick={() => goto(route)}>{label}</button>
+	</div>
+{/snippet}
+
+<div class="flex h-screen items-center justify-center gap-2">
+	{@render route('Admin', './admin/dashboard')}
+	{@render route('User', './user/dashboard')}
+	{@render route('Login', 'login')}
 </div>
-
-

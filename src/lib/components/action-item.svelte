@@ -8,7 +8,7 @@
 	{onclick}
 	role="button"
 	tabindex="0"
-	onkeydown={onclick}
+	onkeydown={() => {}}
 >
 	<Icon {icon} sizepx={iconSize} color={iconColor} {isActive} />
 	{#if label !== ''}

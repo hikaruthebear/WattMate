@@ -10,7 +10,7 @@
 
 <div class="flex h-[100dvh] flex-col overflow-hidden">
 	<header class="fixed z-10 h-fit w-full bg-blue-500">
-		<AdminHeader onclick={toggleSidebar} />
+		<AdminHeader burgerEvent={toggleSidebar} />
 	</header>
 	<div class="flex h-full">
 		<div class=" fixed h-full w-64 shrink-0 bg-green-500 md:relative {sidebar ? 'hidden' : 'flex'} ">

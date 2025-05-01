@@ -23,6 +23,7 @@
 					<p class="text-gray-500">Software Developer</p>
 				</div>
 			</div>
+			<hr class="text-white-500 w-full my-7">
 			<div class="space-y-2">
         {@render info('Email', 'john@example.com')}
         {@render info('Phone:', '+1 234 567 890')}

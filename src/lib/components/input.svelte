@@ -20,18 +20,18 @@
 	<label for={label} class=" text-black-200 font-semibold">
 		{label}
 		<input
-		type={type}
-		{name}
-		{required}
-		inputmode={inputmode}
-		bind:value
-		id={label}
+			{type}
+			{name}
+			{required}
+			{inputmode}
+			bind:value
+			id={label}
 			{placeholder}
 			onfocus={scrollOnView}
 			autocomplete="off"
-			class="border-box bg-white-50 text-black-50 hover:border-primary-300 hover:ring-primary-300 focus:border-primary-300 focus:ring-primary-300 w-full rounded-lg
-			font-normal transition-all ease-in placeholder:font-normal placeholder:transition-all
-			hover:cursor-text focus:text-lg focus:text-gray-800 focus:placeholder:text-lg
+			class="border-box bg-white-50 text-black-50 hover:border-primary-300 hover:ring-primary-300 focus:border-primary-300 focus:ring-primary-300 focus:placeholder:text-lgP w-full
+			rounded-lg font-normal transition-all ease-in placeholder:font-normal
+			placeholder:transition-all hover:cursor-text focus:text-lg focus:text-gray-800
 			{size === 'sm' ? 'h-8' : ''}
 			{size === 'md' ? 'h-10' : ''}
 			{size === 'lg' ? 'h-11' : ''}

@@ -1,11 +1,13 @@
 {
    "files.exclude": {
-      "**/.git": true,
-      "**/.svn": true,
-      "**/.hg": true,
+      ".svelte-kit": true,
       "**/.DS_Store": true,
-      "**/Thumbs.db": true,
+      "**/.git": true,
+      "**/.hg": true,
+      "**/.svn": true,
       "**/*.class": true,
-      "**/*.out": true
+      "**/*.out": true,
+      "**/Thumbs.db": true,
+      "node_modules": true
    }
 }
