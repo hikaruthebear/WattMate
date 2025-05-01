@@ -1,7 +1,7 @@
 <script>
 	import { ActionItem, ProfileIcon, VSeparator, Logo } from '$lib';
 
-	let { burgerEvent , notifEvent} = $props();
+	let { burgerEvent , notifEvent, profileEvent} = $props();
 </script>
 
 <header
@@ -20,7 +20,7 @@
 		</div>
 		<div class="flex items-center gap-2 p-5">
 			<VSeparator />
-			<ProfileIcon label="User123" icon="account_circle" iconColor="!text-black-100" onclick={() => {}} />
+			<ProfileIcon label="User123" icon="account_circle" iconColor="!text-black-100" onclick={profileEvent} />
 		</div>
 	</div>
 </header>

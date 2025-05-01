@@ -2,13 +2,12 @@
 	import { ModalContainer, ActionItem, Icon } from '$lib';
 	let { isOpen, close } = $props();
 
-  let selectedTab = $state('notification');
-  
+	let selectedTab = $state('notification');
 </script>
 
-{#snippet Tab(value: string, checked: boolean = false, onchange : () => void)}
+{#snippet Tab(value: string, checked: boolean = false, onchange: () => void)}
 	<label>
-		<input type="radio" name="panel" {value} class="peer hidden" {checked} {onchange}/>
+		<input type="radio" name="panel" {value} class="peer hidden" {checked} {onchange} />
 		<div
 			class="bg-white-400 border-white-200 flex h-fit items-center border-1 border-b-0 p-2 text-lg font-medium peer-checked:bg-white"
 		>
@@ -26,32 +25,31 @@
 
 {#snippet notifications()}
 	<div class="flex flex-col gap-2 py-4">
-    {@render notifItem()}
-    {@render notifItem()}
-    {@render notifItem()}
-    {@render notifItem()}
-  </div>
+		{@render notifItem()}
+		{@render notifItem()}
+		{@render notifItem()}
+		{@render notifItem()}
+	</div>
 {/snippet}
 
 <ModalContainer {isOpen}>
-  
-    <div class="flex items-center justify-end">
-      <ActionItem icon="close" iconSize="24" iconColor="!text-accent-300" onclick={close} />
-    </div>
-    <div class="w-[450px]">
-      <h1 class="text-xl font-bold mb-2">Notification</h1>
-      <div class="flex mb-2">
-        {@render Tab('Notification', true, () => selectedTab = 'notification')}
-        {@render Tab('Member request', false, () => selectedTab = 'member')}
-      </div>
-      {#if selectedTab === 'notification'}
-        {@render notifications()}      
-      {:else if selectedTab === 'member'}
-        member request
-      {:else}
-         <!-- else content here -->
-      {/if}
-     
-    </div>
-
-  </ModalContainer>
+	<div class="min-w-96 max-w-full rounded-2xl bg-white p-8 shadow-2xl">
+		<div class="flex items-center justify-end">
+			<ActionItem icon="close" iconSize="24" iconColor="!text-accent-300" onclick={close} />
+		</div>
+		<div class="w-[450px]">
+			<h1 class="mb-2 text-xl font-bold">Notification</h1>
+			<div class="mb-2 flex">
+				{@render Tab('Notification', true, () => (selectedTab = 'notification'))}
+				{@render Tab('Member request', false, () => (selectedTab = 'member'))}
+			</div>
+			{#if selectedTab === 'notification'}
+				{@render notifications()}
+			{:else if selectedTab === 'member'}
+				member request
+			{:else}
+				<!-- else content here -->
+			{/if}
+		</div>
+	</div>
+</ModalContainer>

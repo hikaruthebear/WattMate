@@ -10,7 +10,7 @@
 	role="button"
 	tabindex="0"
 	{onclick}
-	onkeydown={onclick}
+	onkeydown={() => {}}
 >
 	<Icon sizepx={iconSize} {icon} color={iconColor} />
 	<span class="hidden md:inline">{label}</span>

@@ -15,19 +15,21 @@
 	let sidebar = true;
 	let addPaymentModal = false;
 	let notification = false;
+	let profilePanel = false;
 
 	const toggle = (state: boolean) => {
 		return !state;
 	};
 </script>
 
-<ProfilePanel isOpen={true} close={() => {}}/>
+<ProfilePanel isOpen={profilePanel} close={() => profilePanel = toggle(profilePanel)}/>
 <AddPayment isOpen={addPaymentModal} close={() => (addPaymentModal = toggle(addPaymentModal))} />
 <Notification isOpen={notification} close={() => (notification = toggle(notification))} />
 
 <div class="flex h-[100dvh] flex-col overflow-hidden bg-red-500">
 	<header class="fixed z-10 h-fit w-full bg-blue-500">
 		<AdminHeader
+			profileEvent={() => profilePanel = toggle(profilePanel)}
 			burgerEvent={() => (sidebar = toggle(sidebar))}
 			notifEvent={() => (notification = toggle(notification))}
 		/>
