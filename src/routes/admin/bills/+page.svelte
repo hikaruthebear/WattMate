@@ -1,5 +1,6 @@
 <script>
 	import { AdminSidebar, AdminHeader, Heading, TableHead, TableRow, ActionItem } from '$lib';
+	import InputTable from '$lib/components/input-table.svelte';
 
 	let sidebar = false;
 
@@ -8,7 +9,7 @@
 	};
 </script>
 
-<div class="flex h-[100dvh] flex-col overflow-hidden">
+<div class="flex h-[100dvh] flex-col overflow-hidden ">
 	<header class="fixed z-10 h-fit w-full bg-blue-500">
 		<AdminHeader burgerEvent={toggleSidebar} />
 	</header>
@@ -18,14 +19,11 @@
 		</div>
 		<main class="bg-white-200 mt-10 flex w-full flex-col gap-5 overflow-y-auto p-5 md:mt-20">
 			<div class="bg-white-50 flex flex-col rounded-lg p-8">
-				<div class="flex justify-between items-center pr-4 mb-4">
+				<div class="mb-4 flex items-center justify-between pr-4">
 					<Heading heading="Tables" />
-					<ActionItem icon=person_add/>
-				</div >
-				<TableHead column1="Date" column2="Total kWh used" column3="Total Amount" column4="Status" />
-				{#each Array(13) as item, i}
-					<TableRow />
-				{/each}
+					<ActionItem icon="person_add" />
+				</div>
+				<InputTable />
 			</div>
 		</main>
 	</div>

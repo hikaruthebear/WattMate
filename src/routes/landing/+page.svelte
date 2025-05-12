@@ -1,5 +1,5 @@
-<script>
-  import {Logo};
+ci<script>
+  import {Logo} from '$lib';
 </script>
 
 <div id="webcrumbs" class="w-full flex justify-center">
@@ -62,19 +62,16 @@
                 src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3MzkyNDZ8MHwxfHNlYXJjaHwxfHxwcm9maWxlfGVufDB8fHx8MTc0NjA2NzgyN3ww&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
                 alt="User"
                 class="h-10 w-10 rounded-full border-2 border-white"
-                keywords="profile, user, avatar"
               />
               <img
                 src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3MzkyNDZ8MHwxfHNlYXJjaHwyfHxwcm9maWxlfGVufDB8fHx8MTc0NjA2NzgyN3ww&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
                 alt="User"
                 class="h-10 w-10 rounded-full border-2 border-white"
-                keywords="profile, user, avatar"
               />
               <img
                 src="https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3MzkyNDZ8MHwxfHNlYXJjaHwzfHxwcm9maWxlfGVufDB8fHx8MTc0NjA2NzgyN3ww&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
                 alt="User"
                 class="h-10 w-10 rounded-full border-2 border-white"
-                keywords="profile, user, avatar"
               />
             </div>
             <p class="text-sm opacity-80">
@@ -87,7 +84,6 @@
             src="https://images.unsplash.com/photo-1579762715118-a6f1d4b934f1?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3MzkyNDZ8MHwxfHNlYXJjaHwxfHxpbGx1c3RyYXRpb258ZW58MHx8fHwxNzQ2MDc1MTE1fDA&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
             alt="Hero illustration"
             class="h-auto w-full rounded-xl shadow-xl transition-transform duration-500 hover:scale-105"
-            keywords="illustration, design, creativity, workspace"
           />
         </div>
       </section>
@@ -166,7 +162,6 @@
               src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3MzkyNDZ8MHwxfHNlYXJjaHwxfHxkYXNoYm9hcmR8ZW58MHx8fHwxNzQ1OTUzMzc4fDA&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
               alt="Platform dashboard"
               class="h-auto w-full rounded-xl shadow-lg"
-              keywords="dashboard, analytics, data visualization"
             />
           </div>
           <div class="w-full md:w-1/2">

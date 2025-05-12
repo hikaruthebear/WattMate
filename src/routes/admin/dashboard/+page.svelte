@@ -1,38 +1,16 @@
 <script lang="ts">
-	import {
-		AdminSidebar,
-		Card,
-		TableHead,
-		TableRow,
-		Heading,
-		AdminHeader,
-		AddPayment,
-		Notification,
-		ProfileIcon
-	} from '$lib';
-	import ProfilePanel from '$lib/components/profile-panel.svelte';
+	import axios from 'axios';
+	import { AdminSidebar, Card, Heading, AdminHeader, AddPayment } from '$lib';
 
 	let sidebar = true;
 	let addPaymentModal = false;
-	let notification = false;
-	let profilePanel = false;
-
-	const toggle = (state: boolean) => {
-		return !state;
-	};
 </script>
 
-<ProfilePanel isOpen={profilePanel} close={() => profilePanel = toggle(profilePanel)}/>
-<AddPayment isOpen={addPaymentModal} close={() => (addPaymentModal = toggle(addPaymentModal))} />
-<Notification isOpen={notification} close={() => (notification = toggle(notification))} />
+<AddPayment isOpen={addPaymentModal} close={() => (addPaymentModal = false)} />
 
 <div class="flex h-[100dvh] flex-col overflow-hidden bg-red-500">
 	<header class="fixed z-10 h-fit w-full bg-blue-500">
-		<AdminHeader
-			profileEvent={() => profilePanel = toggle(profilePanel)}
-			burgerEvent={() => (sidebar = toggle(sidebar))}
-			notifEvent={() => (notification = toggle(notification))}
-		/>
+		<AdminHeader burgerEvent={() => (sidebar = true)} />
 	</header>
 	<div class="flex h-full">
 		<div
@@ -51,11 +29,8 @@
 				<Card label="Total Kilowatts" amount="215 " unit="kWh" icon="electric_bolt" iconColor="!text-yellow-400" />
 			</div>
 			<div class="bg-white-50 flex flex-col rounded-lg p-8">
-				<Heading heading="Consumers" />
-				<TableHead column1="Name" column2="kWh used" column3="Amount" column4="Status" />
-				{#each Array(13) as item, i}
-					<TableRow onclick={(addPaymentModal = toggle(addPaymentModal))} iconOnclick={() => {}} />
-				{/each}
+				<div>
+				</div>
 			</div>
 		</main>
 	</div>

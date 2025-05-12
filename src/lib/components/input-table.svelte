@@ -31,8 +31,8 @@
 	</thead>
 {/snippet}
 
-<div class="overflow-x-auto bg-white">
-	<table class="w-full table-auto border-collapse">
+<div class="overflow-x-auto bg-white ">
+	<table class="w-full border-collapse rounded-2xl">
 		{@render Head()}
 		{@render Row()}
 		{@render Row()}
