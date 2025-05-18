@@ -4,21 +4,24 @@
 
 	const apiUrl: string = 'http://localhost:8080/login';
 
-	let phoneNumber = '';
-	let password = '';
+	let phoneNumber = $state('');
+	let password = $state('');
 
 	const handleLogin = async () => {
 		try {
 			const response = await axios.post(apiUrl, { phone: phoneNumber, password: password });
-			console.log('Login successful:', response.data);
-
-			
+			if (response.status === 200 ) {
+				// Handle successful login, e.g., redirect to dashboard
+				console.log(response.data.message);
+				// Redirect or update state as needed
+			} else {
+				// Handle error response
+				console.error('Login failed:', response.data);
+			}
 		} catch (error) {
 			console.error('Login failed:', error);
 		}
-
 	};
-
 </script>
 
 <main class="text-black-500 bg-white-100 flex h-[100dvh] flex-col items-center justify-center">

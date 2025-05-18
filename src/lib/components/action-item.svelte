@@ -1,6 +1,6 @@
 <script>
 	import { Icon } from '$lib';
-	let { icon = 'photo', label = '', iconSize = 32, iconColor = '', onclick = () => {}, isActive = false } = $$props;
+	let { icon = 'photo', label = '', iconSize = 32, iconColor = '', onclick, isActive = false } = $props();
 </script>
 
 

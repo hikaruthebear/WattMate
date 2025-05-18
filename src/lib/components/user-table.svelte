@@ -4,7 +4,7 @@
 
 	interface User {
 		UserID: number;
-		AddressID: number;
+		AddressName: string;
 		MeterID: number;
 		Name: string;
 		Phone: string;
@@ -31,13 +31,13 @@
 </script>
 
 {#snippet tableRow(user: User)}
-	<tr class="hover:bg-gray-50">
+	<tr class="hover:bg-gray-50 text-nowrap">
 		<td class="px-20 py-3 font-medium text-gray-900">{user.Name}</td>
 		<td class="px-20 py-3">
 			<div class="text-gray-500">{user.Phone}</div>
 			<div class="text-gray-400">{user.Email}</div>
 		</td>
-		<td class="px-20 py-3 text-gray-700">{user.AddressID}</td>
+		<td class="px-20 py-3 text-gray-700">{user.AddressName}</td>
 		<td class="px-20 py-3 text-gray-700">{user.MeterID}</td>
 	</tr>
 {/snippet}

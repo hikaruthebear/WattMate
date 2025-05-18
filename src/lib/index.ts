@@ -20,3 +20,4 @@ export { default as Notification } from './components/notification.svelte';
 export { default as ProfilePanel } from './components/profile-panel.svelte';
 export { default as InputTable } from './components/input-table.svelte';
 export { default as UserTable } from './components/user-table.svelte';
+export {default as BillTableList} from './components/bill-table-list.svelte';

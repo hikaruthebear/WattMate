@@ -1,5 +1,5 @@
 <script>
-	import { AdminSidebar, AdminHeader, Heading, TableHead, TableRow, ActionItem } from '$lib';
+	import { AdminSidebar, AdminHeader, Heading,  ActionItem, BillTableList } from '$lib';
 	import InputTable from '$lib/components/input-table.svelte';
 
 	let sidebar = false;
@@ -19,11 +19,11 @@
 		</div>
 		<main class="bg-white-200 mt-10 flex w-full flex-col gap-5 overflow-y-auto p-5 md:mt-20">
 			<div class="bg-white-50 flex flex-col rounded-lg p-8">
-				<div class="mb-4 flex items-center justify-between pr-4">
+				<!-- <div class="mb-4 flex items-center justify-between pr-4">
 					<Heading heading="Tables" />
-					<ActionItem icon="person_add" />
-				</div>
-				<InputTable />
+					<ActionItem icon="post_add" />
+				</div> -->
+				<BillTableList />
 			</div>
 		</main>
 	</div>

@@ -1,9 +1,11 @@
 <script lang="ts">
 	import { Button, Selection, Input } from '$lib';
+	import axios from 'axios';
 
 	const Pattern = {
 		names: /^[a-zA-Z\s'-]+$/,
-		phoneNumber: /^(09\d{9}|(?:\+?63)\d{10})$/
+		phoneNumber: /^(09\d{9}|(?:\+?63)\d{10})$/,
+		email: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
 	};
 
 	let confirmPassword = $state('');
@@ -15,7 +17,8 @@
 		phone: '',
 		address: '',
 		meterId: '',
-		password: ''
+		password: '',
+		email: ''
 	});
 
 	const validateNames = (str: string, pattern: RegExp) => {
@@ -39,6 +42,15 @@
 			return 'Field cannot be empty.';
 		} else if (!pattern.test(str)) {
 			return 'Invalid phone number';
+		}
+		return '';
+	};
+
+	const validateEmail = (str: string, pattern: RegExp) => {
+		if (str.trim() == '') {
+			return 'Field cannot be empty.';
+		} else if (!pattern.test(str)) {
+			return 'Invalid Email Address';
 		}
 		return '';
 	};
@@ -67,11 +79,12 @@
 			Error.phone ||
 			Error.password ||
 			Error.confirmPassword ||
-			Error.gender
+			Error.gender ||
+			Error.email
 		) {
 			return;
 		}
-		console.log('User registered:', $inspect(User));
+		axios.post('http://localhost:8080/register', User);
 	};
 
 	let Error = $state({
@@ -83,7 +96,8 @@
 		phone: '',
 		meterId: '',
 		password: '',
-		confirmPassword: ''
+		confirmPassword: '',
+		email: ''
 	});
 
 	$effect(() => {
@@ -94,11 +108,12 @@
 		Error.password = validatePassword(User.password);
 		Error.gender = validateGender(User.gender);
 		Error.confirmPassword = User.password !== confirmPassword ? 'Passwords do not match.' : '';
-		localStorage.setItem('User', JSON.stringify(User));
+		Error.email = validateEmail(User.email, Pattern.email);
+		// localStorage.setItem('User', JSON.stringify(User));
 	});
 </script>
 
-<main class="bg-white-100 text-black-500 flex h-[100vh] flex-col items-center justify-center">
+<main class="bg-white-100 text-black-500 flex h-auto flex-col items-center justify-center md:py-10">
 	<div
 		class="bg-white-50 flex h-full w-full flex-col gap-7 px-5 py-10 md:h-auto md:w-1/3 md:min-w-[575px] md:rounded-xl"
 	>
@@ -117,7 +132,8 @@
 				<Input label="Age" size="md" type="number" bind:value={User.age} error={Error.age} />
 				<Selection label="Gender" options={['Male', 'Female']} bind:value={User.gender} error={Error.gender} />
 			</div>
-			<Input label="Address" size="md" />
+			<Input label="Address" size="md" type="text" bind:value={User.address} />
+			<Input label="Email Address" size="md" type="email" bind:value={User.email} error={Error.email} />
 			<Input
 				label="Phone number"
 				size="md"
@@ -126,7 +142,7 @@
 				bind:value={User.phone}
 				error={Error.phone}
 			/>
-			<Input label="Meter ID" size="md" type="number" bind:value={User.meterId} error={Error.meterId}/>
+			<Input label="Meter ID" size="md" type="number" bind:value={User.meterId} error={Error.meterId} />
 
 			<Input label="Password" type="password" size="md" bind:value={User.password} error={Error.password} />
 			<Input
@@ -136,7 +152,7 @@
 				bind:value={confirmPassword}
 				error={Error.confirmPassword}
 			/>
-			<Button variant="primary" label="Register" size="md" onclick={submit}/>
+			<Button variant="primary" label="Register" size="md" onclick={submit} />
 			<hr class="text-black/20" />
 			<a href="/login">
 				<Button variant="secondary" label="Back to login" size="md" />
