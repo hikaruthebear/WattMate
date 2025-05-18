@@ -47,3 +47,10 @@ function fetch_users()
   echo json_encode(['error' => false, 'users' => $data]);
 }
 
+function fetch_bill_list() : void {
+
+}
+
+function fetch_user_bills() : void {
+  
+}

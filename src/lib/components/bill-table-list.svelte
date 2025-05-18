@@ -1,8 +1,12 @@
 <script lang="ts">
 	import { Heading, ActionItem } from '$lib';
-	import { onMount } from 'svelte';
-
+	import axios from 'axios';
+	
+	const apiUrl = import.meta.env.apiUrl;
 	let tableEditMode = $state(false);
+
+	// axios.get(`${apiUrl}`)
+
 
 	interface Bill {
 		date: string;
@@ -11,26 +15,25 @@
 		status: string;
 	}
 
-	let Bills: Bill[] = [
-		{
-			date: '2025-05-01',
-			totalKwhUsed: 150,
-			totalAmount: '$45.00',
-			status: 'paid'
-		},
-		{
-			date: '2025-04-01',
-			totalKwhUsed: 175,
-			totalAmount: '$52.50',
-			status: 'pending'
-		},
-		{
-			date: '2025-03-01',
-			totalKwhUsed: 200,
-			totalAmount: '$60.00',
-			status: 'overdue'
-		}
-	];
+let Bills : Bill[] = [
+	{
+		date: '2025-05-01',
+		totalKwhUsed: 150,
+		totalAmount: '$45.00',
+		status: 'paid'
+	},
+	{
+		date: '2025-04-01',
+		totalKwhUsed: 175,
+		totalAmount: '$52.50',
+		status: 'pending'
+	},
+	{
+		date: '2025-03-01',
+		totalKwhUsed: 200,
+		totalAmount: '$60.00',
+		status: 'unpaid'
+	}];
 
 	const openTable = () => {
 		const tableList = document.getElementById('table-list');

@@ -14,7 +14,7 @@
 <ModalContainer {isOpen} > 
   <div class="w-96 max-w-full rounded-2xl bg-white p-8 shadow-2xl">
       <div class="flex items-center justify-end ">
-        <ActionItem icon="close" iconSize="24" iconColor="!text-accent-300" onclick={close} />
+        <ActionItem icon="close" iconSize={24} iconColor="!text-accent-300" onclick={close} />
       </div>
 			<div class="mb-6 flex items-center space-x-4">
 				<div class="h-10 w-10 rounded-full border-1 bg-yellow-500"></div>
