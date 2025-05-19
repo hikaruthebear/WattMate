@@ -12,6 +12,7 @@
 	{@render route('Admin', './admin/dashboard')}
 	{@render route('User', './user/dashboard')}
 	{@render route('Login', 'login')}
+	{@render route('Landing', './landing')}
 </div>
 
 <div class="h-full text-gray-800 antialiased bg-white">

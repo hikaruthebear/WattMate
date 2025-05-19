@@ -20,6 +20,7 @@
 		profilePanel = false;
 	}}
 />
+
 <header
 	class="bg-white-50 text-black-500 border-black-50/20 border-1 flex h-12 w-full items-center justify-between md:h-20"
 >

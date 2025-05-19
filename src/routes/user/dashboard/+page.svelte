@@ -6,9 +6,6 @@
 		sidebar = !sidebar;
 		
 	};
-
-	
-
 	
 </script>
 
@@ -30,27 +27,6 @@
 			<div class="bg-white-50 flex flex-col rounded-lg p-8">
 
 				<Heading heading="Insert Sample Graph Here" />
-				 <svg class="w-full h-64 mt-4" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
-          <!-- Background -->
-          <rect width="600" height="300" fill="#f3f4f6"/>
-          <!-- Axes -->
-          <line x1="50" y1="250" x2="550" y2="250" stroke="#4b5563" stroke-width="2"/>
-          <line x1="50" y1="50"  x2="50"  y2="250" stroke="#4b5563" stroke-width="2"/>
-          <!-- Bars -->
-          <rect x="100" y="150" width="60" height="100" fill="#3b82f6"/> <!-- Jan -->
-          <rect x="200" y="170" width="60" height="80"  fill="#3b82f6"/> <!-- Feb -->
-          <rect x="300" y="100" width="60" height="150" fill="#3b82f6"/> <!-- Mar -->
-          <rect x="400" y="120" width="60" height="130" fill="#3b82f6"/> <!-- Apr -->
-          <!-- Labels -->
-          <text x="130" y="270" class="text-gray-700 text-sm">Jan</text>
-          <text x="230" y="270" class="text-gray-700 text-sm">Feb</text>
-          <text x="330" y="270" class="text-gray-700 text-sm">Mar</text>
-          <text x="430" y="270" class="text-gray-700 text-sm">Apr</text>
-          <!-- Chart Title -->
-          <text x="300" y="30" text-anchor="middle" class="text-gray-900 font-semibold text-lg">
-            Monthly kWh Usage
-          </text>
-        </svg>
 				
 			</div>
 		</main>

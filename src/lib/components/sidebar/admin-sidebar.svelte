@@ -15,6 +15,6 @@
 
 	<div class="flex flex-col gap-3 px-4">
 		<hr class="text-white-400" />
-		<ActionItem label="Logout" icon="logout" iconSize="32" />
+		<ActionItem label="Logout" icon="logout" iconSize={32} onclick={() => {}}/>
 	</div>
 </div>

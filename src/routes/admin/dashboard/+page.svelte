@@ -2,15 +2,15 @@
 	import axios from 'axios';
 	import { AdminSidebar, Card, Heading, AdminHeader, AddPayment } from '$lib';
 
-	let sidebar = true;
-	let addPaymentModal = false;
+	let sidebar = $state(true);
+	let addPaymentModal = $state(false);
 </script>
 
 <AddPayment isOpen={addPaymentModal} close={() => (addPaymentModal = false)} />
 
 <div class="flex h-[100dvh] flex-col overflow-hidden bg-red-500">
 	<header class="fixed z-10 h-fit w-full bg-blue-500">
-		<AdminHeader burgerEvent={() => (sidebar = true)} />
+		<AdminHeader burgerEvent={() => (sidebar = !sidebar)} />
 	</header>
 	<div class="flex h-full">
 		<div

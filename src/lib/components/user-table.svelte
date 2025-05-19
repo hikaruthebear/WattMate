@@ -2,6 +2,8 @@
 	import axios from 'axios';
 	import { onMount } from 'svelte';
 
+	const apiUrl = 'http://localhost:8080';
+
 	interface User {
 		UserID: number;
 		AddressName: string;
@@ -18,7 +20,7 @@
 	let users: User[] = [];
 	onMount(async () => {
 		try {
-			const response = await axios.get('http://localhost:8080?action=fetch_users');
+			const response = await axios.get(apiUrl + '/?action=fetch_users');
 			if (response.data && !response.data.error) {
 				users = response.data.users;
 			} else {
@@ -41,19 +43,21 @@
 		<td class="px-20 py-3 text-gray-700">{user.MeterID}</td>
 	</tr>
 {/snippet}
-
-<table class="min-w-full divide-y divide-gray-200 text-sm">
-	<thead class="bg-gray-50 text-left uppercase tracking-wider text-gray-500">
-		<tr>
-			<th class="px-20 py-4">Name</th>
-			<th class="px-20 py-4">Contact Info</th>
-			<th class="px-20 py-4">Address</th>
-			<th class="px-20 py-4">Meter No</th>
-		</tr>
-	</thead>
-	<tbody class="divide-y divide-gray-100">
-		{#each users as user}
-			{@render tableRow(user)}
-		{/each}
-	</tbody>
-</table>
+<div class="w-full overflow-x-auto outline-1 outline-gray-300 rounded-lg">
+	<table class="min-w-full divide-y divide-gray-200 text-sm ">
+		<thead class="bg-gray-50 text-left uppercase tracking-wider text-gray-500">
+			<tr>
+				<th class="px-20 py-4">Name</th>
+				<th class="px-20 py-4">Contact Info</th>
+				<th class="px-20 py-4">Address</th>
+				<th class="px-20 py-4">Meter No</th>
+			</tr>
+		</thead>
+		<tbody class="divide-y divide-gray-100">
+			{#each users as user}
+				{@render tableRow(user)}
+			{/each}
+		</tbody>
+	</table>
+	
+</div>
