@@ -14,7 +14,6 @@
 		</a>
 	</div>
 	<div class="flex items-center">
-		<ActionItem size="1.5" icon="notifications" />
 		<div class="flex items-center p-5 gap-2">
 			<VSeparator />
 			<ProfileIcon  label="User123" icon="account_circle" iconColor="!text-black-100" onclick={() => {}}/>

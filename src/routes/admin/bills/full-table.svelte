@@ -17,7 +17,7 @@
 <div class="hidden" id="table">
 	<div class="mb-4 flex items-center justify-between pr-4 text-center">
 		<div class="flex items-center">
-			<ActionItem icon="arrow_back_ios" iconSize={24} onclick={back} />
+			<ActionItem icon="arrow_back_ios" iconSize={24} onclick={() => {}} />
 			<h1 class="text-2xl font-black">Bill of May</h1>
 		</div>
 		<ActionItem

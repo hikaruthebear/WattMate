@@ -7,6 +7,8 @@
 	// export let icon = '/placeholder.png';
 
 	let { label = '', amount = '', unit = '', date = '', icon = 'photo', sizepx = 32, iconColor = "" } = $props();
+
+	
 </script>
 
 <div
@@ -20,7 +22,7 @@
 		{:else if unit === 'date'}
 			{date}
 		{:else}
-			₱{amount}
+			{amount}
 		{/if}
 	</div>
 	<div class=" col-start-5 row-start-1"><Icon {sizepx} {icon} color={iconColor}/></div>

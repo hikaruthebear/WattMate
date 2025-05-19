@@ -1,104 +1,65 @@
 <?php
 
 include_once '.config/db.php';
-include_once 'header.php';
+include_once '.config/header.php';
+include_once 'get-functions.php';
+include_once 'post-functions.php';
 
 $res = ['error' => false, 'message' => ''];
-$action = isset($_GET['action']) ? $_GET['action'] : null;
 
-switch ($action) {
-  case 'fetch_users': {
-    fetch_users();
-    break;
-  }
-  case 'fetch_bill_summary': {
-    fetch_bill_summary();
-    break;
-  }
-  default: {
-    $res['error'] = true;
-    $res['message'] = 'Invalid action';
-    break;
-  }
-}
 
-function fetch_users()
-{
-  $query = "SELECT CONCAT(u.Firstname , ' ', u.Lastname ) as Name, u.Phone, u.Email, u.MeterID, a.AddressName FROM `users` as u JOIN addresses as a ON a.AddressID = u.AddressID";
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  $raw = file_get_contents("php://input");
+  $data = json_decode($raw, true);
 
-  global $db_connection, $res;
+  $post_action = isset($data['action']) ? $data['action'] : null;
+  // echo json_encode(['message' => $data]);
 
-  if (!$db_connection) {
-    $res['error'] = true;
-    $res['message'] = 'Database connection failed';
-    echo json_encode($res);
-    exit();
+  switch ($post_action) {
+    case 'register': {
+      register($data['User']);
+      break;
+    }
+    case 'login': {
+      login($data);
+      break;
+    }
+    default: {
+      $res['error'] = true;
+      $res['message'] = 'Invalid action';
+      break;
+    }
   }
 
+} elseif ($_SERVER['REQUEST_METHOD'] === 'GET') {
+  $get_action = isset($_GET['action']) ? $_GET['action'] : null;
 
-
-  $statement = $db_connection->prepare($query);
-  $statement->execute();
-  $res = $statement->get_result();
-  $statement->close();
-
-  $data = [];
-
-  while ($Users = $res->fetch_assoc()) {
-    $data[] = $Users;
-  }
-
-  echo json_encode(['error' => false, 'users' => $data]);
-}
-
-function fetch_bill_summary()
-{
-  // SQL query to get total amount, total kWh used, and average rate grouped by date
-  $query = "
-  SELECT `Date`, SUM(`Amount`) AS `TotalAmount`, 
-      SUM(`CurrentReading` - `PreviousReading`) AS `TotalKwhUsed`, 
-      AVG(`Rate`) AS `AverageRate`
-  FROM 
-      `bill`
-  GROUP BY 
-      `Date`
-  ORDER BY 
-      `Date`
-  ";
-
-  global $db_connection, $res;
-
-  // Check if database connection exists
-  if (!$db_connection) {
-    $res['error'] = true;
-    $res['message'] = 'Database connection failed';
-    echo json_encode($res);
-    exit();
-  }
-
-  // Prepare the SQL statement
-  $statement = $db_connection->prepare($query);
-
-  // Execute the statement
-  if ($statement->execute()) {
-    $result = $statement->get_result();
-    $statement->close();
-
-    // Initialize an array to store the fetched data
-    $data = [];
-
-    // Fetch all rows
-    while ($row = $result->fetch_assoc()) {
-      $data[] = $row;
+  switch ($get_action) {
+    case 'fetch_users': {
+      fetch_users();
+      break;
+    }
+    case 'fetch_bill_summary': {
+      fetch_bill_summary();
+      break;
+    }
+    case 'fetch_bill_by_date': {
+      fetch_bill_by_date();
+      break;
+    }
+    default: {
+      $res['error'] = true;
+      $res['message'] = 'Invalid action';
+      break;
     }
 
-    // Return the data as a JSON response
-    echo json_encode(['error' => false, 'billSummary' => $data]);
-  } else {
-    // Handle query execution failure
-    $res['error'] = true;
-    $res['message'] = 'Query execution failed';
-    echo json_encode($res);
   }
+} else {
+  http_response_code(405); // Method Not Allowed
+  echo json_encode(['success' => false, 'message' => 'Method not allowed']);
 }
+
+
+
+
 

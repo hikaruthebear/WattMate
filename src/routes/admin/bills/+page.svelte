@@ -1,14 +1,8 @@
 <script>
-	import { AdminSidebar, AdminHeader, Heading, ActionItem, BillTableList, AddMember, AddTable } from '$lib';
-	import AddMemberModal from '$lib/components/add-member-modal.svelte';
-	import InputTable from '$lib/components/input-table.svelte';
+	import { AdminSidebar, AdminHeader , BillTableList } from '$lib';
 
 	let sidebar = $state(false);
-	let addTable = $state(false);
-
-	let toggleSidebar = () => {
-		sidebar = !sidebar;
-	};
+	
 </script>
 
 <div class="flex h-[100dvh] flex-col overflow-hidden">
